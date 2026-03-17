@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Syntra Spaces — Em breve</title>
+  <meta name="description" content="A nova forma inteligente de gerenciar e reservar espaços corporativos. Cadastre-se para ser avisado no lançamento." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <div class="glow"></div>
+
+  <main class="container">
+    <img src="syntra-logo.png" alt="Syntra Logo" class="logo" />
+    <h1>Syntra Spaces</h1>
+    <p class="subtitle">A nova forma inteligente de gerenciar e reservar espaços corporativos.</p>
+    <p class="description">
+      Estamos finalizando os últimos detalhes.<br />
+      Deixe seu email e seja o primeiro a saber quando lançarmos.
+    </p>
+
+    <div class="card">
+      <form id="emailForm" class="form">
+        <input type="email" id="emailInput" placeholder="Digite seu email" required />
+        <button type="submit">Quero ser avisado</button>
+      </form>
+      <div id="successMsg" class="success hidden">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <p>Ótimo! Você será avisado no lançamento.</p>
+      </div>
+      <p id="errorMsg" class="error hidden"></p>
+    </div>
+  </main>
+
+  <footer>© Syntra — Todos os direitos reservados.</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

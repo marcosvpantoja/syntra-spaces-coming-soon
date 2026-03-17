@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 272 50% 31%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 264 100% 12%;
+    --primary-light: 258 89% 66%;
+
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 264 100% 12%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 258 33% 57%;
+
+    --accent: 258 89% 66%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 264 100% 12% / 0.06;
+    --input: 264 100% 12% / 0.1;
+    --ring: 258 89% 66%;
+
+    --radius: 12px;
+
+    --surface: 240 5% 96%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 264 100% 12%;
+    --sidebar-primary: 272 50% 31%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 258 89% 66%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 264 100% 12% / 0.06;
+    --sidebar-ring: 258 89% 66%;
+
+    /* Syntra gradients */
+    --gradient-primary: linear-gradient(135deg, #14003C 0%, #502878 50%, #8B5CF6 100%);
+    --gradient-secondary: linear-gradient(135deg, #3C2878 0%, #643C8C 100%);
+    --gradient-accent: linear-gradient(135deg, #502878 0%, #8B5CF6 100%);
+
+    /* Syntra shadows */
+    --shadow-base: 0 0 0 1px rgba(20, 0, 60, 0.05);
+    --shadow-card: 0 1px 3px 0 rgba(20, 0, 60, 0.1), 0 1px 2px -1px rgba(20, 0, 60, 0.06);
+    --shadow-hover: 0 10px 15px -3px rgba(20, 0, 60, 0.1), 0 4px 6px -4px rgba(20, 0, 60, 0.1);
+    --shadow-glow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+
+  .dark {
+    --background: 264 100% 12%;
+    --foreground: 0 0% 100%;
+    --card: 270 60% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 270 60% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 258 89% 66%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 40% 18%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 270 40% 18%;
+    --muted-foreground: 258 60% 72%;
+    --accent: 258 89% 66%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 100% / 0.08;
+    --input: 0 0% 100% / 0.1;
+    --ring: 258 89% 66%;
+    --sidebar-background: 270 60% 8%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 258 89% 66%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 40% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 100% / 0.08;
+    --sidebar-ring: 258 89% 66%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Jost', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1 {
+    @apply text-[42px] font-bold leading-[1.1] tracking-[-0.02em];
+  }
+
+  h2 {
+    @apply text-[32px] font-semibold leading-[1.2];
+    color: #14003C;
+  }
+
+  h3 {
+    @apply text-[24px] font-semibold;
+    color: #281464;
+  }
+}
+
+@layer components {
+  .syntra-gradient {
+    background: var(--gradient-primary);
+  }
+
+  .syntra-gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .syntra-gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .syntra-card {
+    @apply bg-card rounded-[12px];
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 200ms cubic-bezier(0.25, 0.1, 0.25, 1),
+                transform 200ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .syntra-card:hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .syntra-label {
+    @apply text-[12px] font-bold uppercase tracking-[0.08em];
+    color: #643C8C;
+  }
+
+  .syntra-body {
+    @apply text-[16px] font-normal leading-[1.6];
+    color: #3C2878;
+  }
+
+  .syntra-text-sm {
+    @apply text-[14px];
+    color: #643C8C;
+  }
+}
+
+@layer utilities {
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+
+  .syntra-skeleton {
+    background: linear-gradient(90deg, #F5F5F7 25%, #E5E5E7 50%, #F5F5F7 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+}
